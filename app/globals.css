@@ -1,0 +1,15 @@
+@import "tailwindcss";
+@theme inline {
+  --color-ink: #09090b; --color-panel: #18181b; --color-line: #27272a; --color-mute: #a1a1aa;
+  --color-soft: #f4f4f5; --color-violet: #8b5cf6; --color-lilac: #a78bfa;
+  --font-display: var(--font-bricolage), system-ui, sans-serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+}
+html { scroll-behavior: smooth; }
+body { background: var(--color-ink); color: var(--color-soft); font-family: var(--font-sans); }
+:focus-visible { outline: 2px solid var(--color-lilac); outline-offset: 3px; border-radius: 4px; }
+.glow { background: radial-gradient(circle, rgba(139,92,246,.45), rgba(59,29,143,.2) 45%, transparent 70%); animation: breathe 9s ease-in-out infinite alternate; }
+@keyframes breathe { to { transform: scale(1.12); opacity: .75; } }
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } }
+.rise { animation: rise .8s ease-out both; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .glow, .rise { animation: none; } }
